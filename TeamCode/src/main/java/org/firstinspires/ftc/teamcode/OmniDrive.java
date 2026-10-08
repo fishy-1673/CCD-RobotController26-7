@@ -50,11 +50,11 @@ public class OmniDrive extends LinearOpMode {
             double dlx =  gamepad1.left_stick_x;
             double drx =  gamepad1.right_stick_x;
             /*double clt = gamepad2.left_trigger;
-            double crt = gamepad2.right_trigger;
+            double crt = gamepad2.right_trigger;*/
             double  drt = gamepad1.right_trigger;
             double dlt = gamepad1.left_trigger;
-             */
-            Omni.Drive(dly, dlx, drx);
+             Omni.Drive(dly+drt-dlt, dlx, drx); //for trigger control too.
+            //original: Omni.Drive(dly, dlx, drx);
             /*if(unlockedSP){
                 SP = clt;
                 Shoot.speed(SP);
