@@ -29,17 +29,15 @@ public class DriveTrain {
         FRD.setDirection(DcMotor.Direction.FORWARD);
         BRD.setDirection(DcMotor.Direction.FORWARD);
 
-        //set to run with encoder
-        FLD.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        BLD.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        FRD.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        BRD.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        //set to run with/without encoder
+
+        FLD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        BLD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        FRD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        BRD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //set to magnetically brake
-        FLD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        BLD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        FRD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        BRD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
 
 
     }
