@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.DepSystems.DriveTrain;
+import org.firstinspires.ftc.teamcode.DepSystems.Intake;
 //import org.firstinspires.ftc.teamcode.systems.Indexer;
 //import org.firstinspires.ftc.teamcode.systems.Intake;
 //import org.firstinspires.ftc.teamcode.systems.Launcher;
@@ -30,7 +31,7 @@ public class OmniDrive extends LinearOpMode {
     public void runOpMode() {
         DriveTrain Omni = new DriveTrain(hardwareMap);
         //Launcher Shoot = new Launcher(hardwareMap);
-       // Intake Take = new Intake(hardwareMap);
+       Intake Take = new Intake(hardwareMap);
        // Indexer Index = new Indexer(hardwareMap);
         List<LynxModule> allHubs = hardwareMap.getAll(LynxModule.class);
         for (LynxModule hub : allHubs) {
@@ -69,10 +70,14 @@ public class OmniDrive extends LinearOpMode {
                 unlockedSP = !unlockedSP;
             }
             if (gamepad1.xWasPressed()){
-                islockIS = !islockIS;}
-            if (!islockIS){
-                Take.intakeSpeed(drt-dlt);
+                islockIS = !islockIS;}*/
+            if (gamepad1.xWasPressed()){
+                Take.intakeSpeed(0);
             }
+            if (gamepad1.aWasPressed()){Take.intakeSpeed(1);}
+            if (gamepad1.bWasPressed()){Take.intakeSpeed(-1);}
+
+            /*
             if (gamepad2.dpad_up) Index.Index(0);
             else if (gamepad2.dpad_left) Index.Index(1);
             else if (gamepad2.dpad_right) Index.Index(2);
@@ -85,7 +90,7 @@ public class OmniDrive extends LinearOpMode {
             */
             // Show any telemetry deemed relevant
             telemetry.addData("Status", "Run Time: " + runtime.toString());
-            telemetry.addLine(Omni.getTel() );
+            telemetry.addLine(Omni.getTel() + Take.getTel());
             //telemetry.addLine(" unlocked SP: " + unlockedSP + "locked InS: "+ islockIS +Shoot.getTel()+Index.getTel()+Take.getTel()))
             telemetry.update();
         }
