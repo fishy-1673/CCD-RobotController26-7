@@ -47,7 +47,7 @@ public class OmniDrive extends LinearOpMode {
         while (opModeIsActive()) {
 
 
-            double dly =  gamepad1.left_stick_y;
+            double dly =  -gamepad1.left_stick_y;
             double dlx =  gamepad1.left_stick_x;
             double drx =  gamepad1.right_stick_x;
             /*double clt = gamepad2.left_trigger;

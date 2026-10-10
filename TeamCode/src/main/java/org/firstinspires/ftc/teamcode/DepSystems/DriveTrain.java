@@ -46,7 +46,7 @@ public class DriveTrain {
     public void Drive(double drive, double strafe, double yaw) {
         // Combine the joystick requests for each  to determine each wheel's power.
         // also Set up a variable for each drive wheel to save the power level for telemetry.
-        drive = (-drive);
+        drive = (drive);
         frontLeftPower = drive + strafe + yaw;
         frontRightPower = drive - strafe - yaw;
         backLeftPower = drive - strafe + yaw;

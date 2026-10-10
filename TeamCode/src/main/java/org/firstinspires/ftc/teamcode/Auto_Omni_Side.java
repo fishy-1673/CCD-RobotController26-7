@@ -39,11 +39,11 @@ public class Auto_Omni_Side extends LinearOpMode {
         // Wait for the game to start (driver presses START)
         waitForStart();
         omni.Drive(0.25,0,0);
-        Wait(1,"Driving");
+        Wait(3,"Driving");
         omni.Drive(0,0,0);
         Wait(1, "stop");
-        omni.Drive(0,0.35, 0);
-        Wait(7,"Driving left");
+        omni.Drive(0,0.5, 0);
+        Wait(6,"Driving left");
         omni.Drive(0,0,0);
 
 
