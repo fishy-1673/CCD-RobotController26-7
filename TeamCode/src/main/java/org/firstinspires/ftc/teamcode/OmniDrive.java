@@ -54,7 +54,7 @@ public class OmniDrive extends LinearOpMode {
             double crt = gamepad2.right_trigger;*/
             double  drt = gamepad1.right_trigger;
             double dlt = gamepad1.left_trigger;
-             Omni.Drive(dly+drt-dlt, dlx, drx); //for trigger control too.
+             Omni.Drive(dly, dlx, drx);
             //original: Omni.Drive(dly, dlx, drx);
             /*if(unlockedSP){
                 SP = clt;
@@ -71,11 +71,13 @@ public class OmniDrive extends LinearOpMode {
             }
             if (gamepad1.xWasPressed()){
                 islockIS = !islockIS;}*/
+            Take.intakeSpeed(drt);
             if (gamepad1.xWasPressed()){
                 Take.intakeSpeed(0);
             }
-            if (gamepad1.aWasPressed()){Take.intakeSpeed(1);}
-            if (gamepad1.bWasPressed()){Take.intakeSpeed(-1);}
+            else if (gamepad1.aWasPressed()){Take.intakeSpeed(1);}
+            else if (gamepad1.bWasPressed()){Take.intakeSpeed(-1);}
+
 
             /*
             if (gamepad2.dpad_up) Index.Index(0);

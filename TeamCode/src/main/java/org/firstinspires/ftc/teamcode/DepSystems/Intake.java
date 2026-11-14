@@ -13,6 +13,7 @@ public class Intake {
 
 
     private DcMotor Intake;
+    private DcMotor WeirdZoomyThing;
     private CRServo IW;
     private double IntakeSpeed = 0;
     /** @noinspection SpellCheckingInspection*/
@@ -20,13 +21,14 @@ public class Intake {
         Intake = hardwareMap.get(DcMotor.class, "Intake");
         //noinspection SpellCheckingInspection
         IW = hardwareMap.get(CRServo.class,"CROS");
+        WeirdZoomyThing = hardwareMap.get(DcMotor.class,"WZT");
         IW.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
 
     public void intakeSpeed(double speed) {
         IntakeSpeed = speed;
-
+        WeirdZoomyThing.setPower(IntakeSpeed);
         Intake.setPower(IntakeSpeed);
     }
     public void OSS(boolean b){
