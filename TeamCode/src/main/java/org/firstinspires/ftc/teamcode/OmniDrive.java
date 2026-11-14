@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.DepSystems.DriveTrain;
 import org.firstinspires.ftc.teamcode.DepSystems.Intake;
+import org.firstinspires.ftc.teamcode.DepSystems.Launcher;
 //import org.firstinspires.ftc.teamcode.systems.Indexer;
 //import org.firstinspires.ftc.teamcode.systems.Intake;
 //import org.firstinspires.ftc.teamcode.systems.Launcher;
@@ -57,7 +58,7 @@ public class OmniDrive extends LinearOpMode {
             double dlt = gamepad1.left_trigger;
              Omni.Drive(dly, dlx, drx);
             //original: Omni.Drive(dly, dlx, drx);
-            (unlockedSP){
+            if(unlockedSP){
                 SP = clt;
                 Shoot.speed(SP);
             }
@@ -71,7 +72,7 @@ public class OmniDrive extends LinearOpMode {
                 unlockedSP = !unlockedSP;
             }
             if (gamepad1.xWasPressed()){
-                islockIS = !islockIS;}*/
+                islockIS = !islockIS;}
             Take.intakeSpeed(drt);
             if (gamepad1.xWasPressed()){
                 Take.intakeSpeed(0);
