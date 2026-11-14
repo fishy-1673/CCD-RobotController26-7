@@ -30,7 +30,7 @@ public class OmniDrive extends LinearOpMode {
     @Override
     public void runOpMode() {
         DriveTrain Omni = new DriveTrain(hardwareMap);
-        //Launcher Shoot = new Launcher(hardwareMap);
+        Launcher Shoot = new Launcher(hardwareMap);
        Intake Take = new Intake(hardwareMap);
        // Indexer Index = new Indexer(hardwareMap);
         List<LynxModule> allHubs = hardwareMap.getAll(LynxModule.class);
@@ -52,11 +52,12 @@ public class OmniDrive extends LinearOpMode {
             double drx =  gamepad1.right_stick_x;
             /*double clt = gamepad2.left_trigger;
             double crt = gamepad2.right_trigger;*/
+            double clt = gamepad1.left_trigger; //dont use, only for now.
             double  drt = gamepad1.right_trigger;
             double dlt = gamepad1.left_trigger;
              Omni.Drive(dly, dlx, drx);
             //original: Omni.Drive(dly, dlx, drx);
-            /*if(unlockedSP){
+            (unlockedSP){
                 SP = clt;
                 Shoot.speed(SP);
             }
